@@ -24,7 +24,7 @@ I measured it myself on two real datasets.
 
 ---
 
-## 4-Panel Comparison — Camera + BEV
+## 4-Panel Comparison - Camera + BEV
 
 ![Comparison Frame](https://drive.google.com/uc?id=1rRRI6jn6cQEVn5Ao-DHepBVVG_X2eWvx)
 
