@@ -1,6 +1,6 @@
-# Day 9 — Domain Shift: KITTI Germany vs nuScenes Singapore
+# Day 9 - Domain Shift: KITTI Germany vs nuScenes Singapore
 
-> MS Robotics & Autonomous Systems Engineering — Arizona State University — Dec 2026
+> MS Robotics & Autonomous Systems Engineering - Arizona State University - Dec 2026
 
 ---
 
@@ -8,7 +8,7 @@
 
 A detector tuned on German roads.
 Deployed in Singapore.
-How much does it degrade — and why?
+How much does it degrade - and why?
 
 This is the problem every AV company faces when expanding to a new city.
 Waymo trained in San Francisco. Deployed in Phoenix. The model failed.
@@ -30,7 +30,7 @@ I measured it myself on two real datasets.
 
 Real road scenes from both cities with detection dots and distances labeled.
 KITTI Germany road on the left. nuScenes Singapore street on the right.
-BEV point clouds below — the density difference is immediately visible.
+BEV point clouds below - the density difference is immediately visible.
 
 ---
 
@@ -38,16 +38,19 @@ BEV point clouds below — the density difference is immediately visible.
 
 ![Domain Shift Analysis](https://drive.google.com/uc?id=14EY5xW_nlQv7Iyj0fk6FEGJm4G4qAWmK)
 
-![Evaluation Chart](https://drive.google.com/uc?id=1mlNDtRkFiHynqix6n_ar8aIY4hIsLzCZ)
+![Evaluation Chart]()
 
-| Metric | KITTI Germany | nuScenes Singapore |
-|--------|--------------|-------------------|
-| Avg detections/frame | 30.4 | 12.6 |
-| Std deviation | 2.9 | 3.7 |
-| Range | 25 - 37 | 7 - 23 |
-| LiDAR points/scan | 121,855 | 34,722 |
-| Consistency | 90.5% | 70.6% |
-| **Detection drop** | — | **58.4%** |
+| Metric | Value |
+|--------|-------|
+| KITTI avg detections | 30.4 / frame |
+| nuScenes avg detections | 12.6 / frame |
+| Detection drop | 58.4% |
+| KITTI consistency | 90.5% |
+| nuScenes consistency | 70.6% |
+| KITTI points/scan | 121,855 |
+| nuScenes points/scan | 34,722 |
+| Point drop | 71.5% |
+| Root cause | Sensor not scene |
 
 ---
 
@@ -200,8 +203,8 @@ day-009-domain-shift/
 | P1.2 | Stereo Camera Depth Safety | Camera unsafe beyond 10m | ✅ |
 | P1.3 | PointPillars 3D Detector | 98.9% loss reduction from scratch | ✅ |
 | P1.4 | Multi-Camera BEV Perception | 178 objects from 6 cameras | ✅ |
-| P1.5 | Multi-Object Tracking SORT | Detector is bottleneck — not tracker | ✅ |
-| P1.6 | Semantic Segmentation ROS2 | 52.6 FPS — warmup cost measured | ✅ |
+| P1.5 | Multi-Object Tracking SORT | Detector is bottleneck - not tracker | ✅ |
+| P1.6 | Semantic Segmentation ROS2 | 52.6 FPS - warmup cost measured | ✅ |
 | P1.7 | Adverse Weather Analysis | Fog unsafe below 75m visibility | ✅ |
 | P1.8 | LiDAR-Camera Depth Completion | 44x MAE improvement at 0-10m | ✅ |
-| P1.9 | Domain Shift Analysis | 58.4% drop — sensor not scene | ✅ |
+| P1.9 | Domain Shift Analysis | 58.4% drop - sensor not scene | ✅ |
