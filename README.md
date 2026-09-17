@@ -1,4 +1,4 @@
-# Day 9: Domain Shift — KITTI Germany vs nuScenes Singapore
+# Day 9: Domain Shift - KITTI Germany vs nuScenes Singapore
 
 **Vamshikrishna Gadde | MS Robotics and Autonomous Systems, ASU, Dec 2026**
 
